@@ -4,6 +4,8 @@
 <link rel="stylesheet" href="data/design.css">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
 <style>
 body {
   display: -ms-flexbox;
@@ -26,55 +28,60 @@ button{
     font-size:18px;
 }
 #ot {
-    color:orange;
+    color:white;
 }
 </style>
 </head>
 <body>
-<div class="healthbar">
+<div class="healthbar" id='game' style="display: none">
     <div class="hp1">
-        <div><img src="data/heart.png"  id='charhit3'></div>
-        <div><img src="data/heart.png"  id='charhit2'></div>
-        <div><img src="data/heart.png"  id='charhit1'></div>
+        <div class="heart"><img src="data/heart.png"  id='charhit3'></div>
+        <div class="heart"><img src="data/heart.png"  id='charhit2'></div>
+        <div class="heart"><img src="data/heart.png"  id='charhit1'></div>
     </div>
         
     <div class="hp2">
-        <div id='enhit3'><img src="data/heart.png"></div>
-        <div id='enhit2'><img src="data/heart.png"></div>
-        <div id='enhit1'><img src="data/heart.png"></div>
+        <div id='enhit3' class="heart"><img src="data/heart.png"></div>
+        <div id='enhit2' class="heart"><img src="data/heart.png"></div>
+        <div id='enhit1' class="heart"><img src="data/heart.png"></div>
     </div>
 </div>
 
-<div style="margin-left: auto;margin-right: auto;width: 600px;text-align:center;">
+<div style="margin-left: auto;margin-right: auto;width: 600px;text-align:center; background-color: #fe6f61; border-radius: 10px;">
 
-<p style="font-family: 'Press Start 2P', cursive; font-size: 16px;">Тест по теме: <span id="tema"></span>.</p>
+<button onclick="matem()" id='vibor'>Математика: <br> Умножение</button>
+<button onclick="biol()" id='vibor'>Биология: <br> Насекомые</button>
 
-<div id="vopros1" style="display:block;">
+<div id='game' style="display: none">
+<p style="font-family: 'Roboto', sans-serif; color: white;">Тест по теме: <span id="tema"></span>.</p>
 
-<p style="font-family: 'Press Start 2P', cursive; font-size: 14px;">Вопрос 1</p>
+<div id="vopros1" style="display:block; color: white; font-family: 'Roboto', sans-serif;">
+
+<p style="font-family: 'Roboto', sans-serif; color:white;">Вопрос 1</p>
 <p><span id="v_1"></span> <input type="text" id="z_1"></p>
 
 </div>
 
-<div id="vopros2" style="display:none;">
+<div id="vopros2" style="display:none; color: white; font-family: 'Roboto', sans-serif;">
 
-<p style="font-family: 'Press Start 2P', cursive; font-size: 14px;">Вопрос 2</p>
+<p style="font-family: 'Roboto', sans-serif; color: white;">Вопрос 2</p>
 <p><span id="v_2"></span> <input type="text" id="z_2"></p>
 
 </div>
 
-<div id="vopros3" style="display:none;">
+<div id="vopros3" style="display:none; color: white; font-family: 'Roboto', sans-serif;">
 
-<p style="font-family: 'Press Start 2P', cursive; font-size: 14px;">Вопрос 3</p>
+<p style="font-family: 'Roboto', sans-serif; color: white;">Вопрос 3</p>
 <p><span id="v_3"></span> <input type="text" id="z_3"></p>
 
 </div>
 
-<button id="kn_sl" onclick="sled_vopr();">Следующий вопрос</button>
+<button id="kn_sl" onclick="sled_vopr();" style="color: black;" class='button'> <p style="font-family: 'Roboto', sans-serif;    color: white;">Следующий вопрос</p> </button>
 
-<button id="kn_pr" style="display:none;" onclick="proverit();">Проверить</button>
+<button id="kn_pr" style="display:none; color: black;" onclick="proverit();" class="button"> <p style="font-family: 'Roboto', sans-serif;  color: white;">Проверить</p> </button>
 
-<div id="rezultat"></div>
+<div id="rezultat" style="font-family: 'Roboto', sans-serif; color: white;"></div>
+</div>
 </div>
 <html>
  <head>
@@ -90,7 +97,7 @@ button{
   </style>
  </head>
 <br>
-<div class="anim">
+<div class="anim" id='game' style="display: none">
     <div class="player" style="float: left;"> <img src="data/char.png"></div>
     <div class='enemy' ><img src="data/enemy.png"></div>
 </div>
@@ -99,15 +106,41 @@ button{
 <script>
     let hp1 = 3
     let hp2 = 3
+function matem(){
+    alert('выбрана математика')
+    test = mtest;
+    vopros_1 = mvop1;
+    vopros_2 = mvop2;
+    vopros_3 = mvop3;
+    pr_otv_zadachi_1 = mpr_otv_zadachi_1;
+    pr_otv_zadachi_2 = mpr_otv_zadachi_2;
+    pr_otv_zadachi_3 = mpr_otv_zadachi_3;
+    document.getElementById('vibor').style.display == "none";
+    document.getElementById('game').style.display == "block";
+}
+
+function biol(){
+    alert('выбрана биология')
+    test = btest;
+    vopros_1 = bvop1;
+    vopros_2 = bvop2;
+    vopros_3 = bvop3;
+    pr_otv_zadachi_1 = bpr_otv_zadachi_1;
+    pr_otv_zadachi_2 = bpr_otv_zadachi_2;
+    pr_otv_zadachi_3 = bpr_otv_zadachi_3;
+    document.getElementById('vibor').style.display == "none";
+    document.getElementById('game').style.display == "block";  
+}
+
 document.addEventListener('DOMContentLoaded', function(){
     document.getElementById('v_1').innerHTML = vopros_1;
     document.getElementById('v_2').innerHTML = vopros_2;
     document.getElementById('v_3').innerHTML = vopros_3;
     document.getElementById('tema').innerHTML = test;
-});
+    });
+    
 function sled_vopr(){
-    if(document.getElementById('vopros2').style.display == "block")
-    {
+    if(document.getElementById('vopros2').style.display == "block"){
         document.getElementById('vopros2').style.display = "none";
         document.getElementById('vopros3').style.display = "block";
         document.getElementById('kn_sl').style.display = "none";
