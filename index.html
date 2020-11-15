@@ -28,7 +28,7 @@ button{
     font-size:18px;
 }
 #ot {
-    color:white;
+    color:#c592d5;
 }
 </style>
 </head>
@@ -47,40 +47,42 @@ button{
     </div>
 </div>
 
-<div style="margin-left: auto;margin-right: auto;width: 600px; text-align:center; background-color: #fe6f61; border-radius: 10px;">
+<div style="margin-left: auto;margin-right: auto; text-align:center; width: 600px; height: 420px; background-color: #674d6f; border-radius: 10px;"> 
 
-<button onclick="matem()" id='vibor1' class="button"> Математика: <br> Умножение</button>
-<button onclick="biol()" id='vibor2' class="button"> Биология: <br> Насекомые</button>
+<p style="font-family: 'Press Start 2P', cursive; color: #c592d5; margin-top: 50px; font-size: 40px;">Magic Dungeon</p>
+<p id="vibor3"; style="font-family: 'Roboto', sans-serif; color: #c592d5; font-size: 30px;">Выберите тему:</p>
+<button onclick="matem()" id='vibor1' class="button" style="font-size: 35px;"> Математика: <br> Умножение</button>
+<button onclick="biol()" id='vibor2' class="button" style="margin-top: 40px; margin-left: 40px; font-size: 35px;"> Биология: <br> Загадки</button>
 
 <div id='game2' style="display: none">
-<p style="font-family: 'Roboto', sans-serif; color: white;">Тест по теме: <span id="tema"></span>.</p>
+<p style="font-family: 'Roboto', sans-serif; color: #c592d5;">Тест по теме: <span id="tema"></span>.</p>
 
-<div id="vopros1" style="display:block; color: white; font-family: 'Roboto', sans-serif;">
+<div id="vopros1" style="display:block; color: #c592d5; font-family: 'Roboto', sans-serif;">
 
-<p style="font-family: 'Roboto', sans-serif; color:white;">Вопрос 1</p>
+<p style="font-family: 'Roboto', sans-serif; color:#c592d5;">Вопрос 1</p>
 <p><span id="v_1"></span> <input type="text" id="z_1"></p>
 
 </div>
 
-<div id="vopros2" style="display:none; color: white; font-family: 'Roboto', sans-serif;">
+<div id="vopros2" style="display:none; color: #c592d5; font-family: 'Roboto', sans-serif;">
 
-<p style="font-family: 'Roboto', sans-serif; color: white;">Вопрос 2</p>
+<p style="font-family: 'Roboto', sans-serif; color: #c592d5;">Вопрос 2</p>
 <p><span id="v_2"></span> <input type="text" id="z_2"></p>
 
 </div>
 
-<div id="vopros3" style="display:none; color: white; font-family: 'Roboto', sans-serif;">
+<div id="vopros3" style="display:none; color: #c592d5; font-family: 'Roboto', sans-serif;">
 
-<p style="font-family: 'Roboto', sans-serif; color: white;">Вопрос 3</p>
+<p style="font-family: 'Roboto', sans-serif; color: #c592d5;">Вопрос 3</p>
 <p><span id="v_3"></span> <input type="text" id="z_3"></p>
 
 </div>
 
-<button id="kn_sl" onclick="sled_vopr();" style="color: black;" class='button'> <p style="font-family: 'Roboto', sans-serif;    color: white;">Следующий вопрос</p> </button>
+<button id="kn_sl" onclick="sled_vopr();" style="color: black;" class='button'> <p style="font-family: 'Roboto', sans-serif;    color: #c592d5;">Следующий вопрос</p> </button>
 
-<button id="kn_pr" style="display:none; color: black;" onclick="proverit();" class="button"> <p style="font-family: 'Roboto', sans-serif;  color: white;">Проверить</p> </button>
+<button id="kn_pr" style="display:none; color: black;" onclick="proverit();" class="button"> <p style="font-family: 'Roboto', sans-serif;  color: #c592d5;">Проверить</p> </button>
 
-<div id="rezultat" style="font-family: 'Roboto', sans-serif; color: white;"></div>
+<div id="rezultat" style="font-family: 'Roboto', sans-serif; color: #c592d5;"></div>
 </div>
 </div>
 <html>
@@ -98,8 +100,8 @@ button{
  </head>
 <br>
 <div class="anim" id='game3' style="display: none">
-    <div class="player" style="float: left;"> <img src="data/char.png"> </div>
-    <div class='enemy' ><img src="data/1.png" id='shark'> <img src="data/3.png" id='snake'></div>
+    <div class="player" style="float: left;"> <img src="data/char.png" id='plr' class="train"> </div>
+    <div class='enemy' ><img src="data/1.png" id='shark' class='train1'> <img src="data/3.png" id='snake' class='train1'></div>
 </div>
 </body>
 </html>
@@ -116,6 +118,7 @@ function matem(){
     pr_otv_zadachi_3 = mpr_otv_zadachi_3;
     document.getElementById('vibor1').style.display = "none";
     document.getElementById('vibor2').style.display = "none";
+    document.getElementById('vibor3').style.display = "none";
     document.getElementById('game1').style.display = "block";
     document.getElementById('game2').style.display = "block";
     document.getElementById('game3').style.display = "block";
@@ -136,6 +139,7 @@ function biol(){
     pr_otv_zadachi_3 = bpr_otv_zadachi_3;
     document.getElementById('vibor1').style.display = "none";
     document.getElementById('vibor2').style.display = "none";
+    document.getElementById('vibor3').style.display = "none";
     document.getElementById('game1').style.display = "block";
     document.getElementById('game2').style.display = "block";
     document.getElementById('game3').style.display = "block";
@@ -152,6 +156,9 @@ function sled_vopr(){
         document.getElementById('vopros3').style.display = "block";
         document.getElementById('kn_sl').style.display = "none";
         document.getElementById('kn_pr').style.display = "block";
+        document.getElementById('snake').style.right='500px'
+        document.getElementById('shark').style.right='500px'
+        document.getElementById('plr').style.left='600px'
         otv_uch_2 = document.getElementById('z_2').value;
         otv_ucgenika_2 = otv_uch_2;
         otv_uch_2 = kodirov(otv_uch_2);
@@ -176,6 +183,9 @@ function sled_vopr(){
     if(document.getElementById('vopros1').style.display == "block"){
         document.getElementById('vopros1').style.display = "none";
         document.getElementById('vopros2').style.display = "block";
+        document.getElementById('snake').style.right='500px'
+        document.getElementById('plr').style.left='600px'
+        document.getElementById('shark').style.right='500px'
         otv_uch_1 = document.getElementById('z_1').value;
         otv_ucgenika_1 = otv_uch_1;
         otv_uch_1 = kodirov(otv_uch_1);
@@ -227,11 +237,13 @@ function proverit(){
     }
     if(hp2 == 1){
         document.getElementById('enhit2').style.display = 'none';
-        alert('YOU WIN!');
+        document.getElementById('snake').style.display = 'none';
+        document.getElementById('shark').style.display = 'none';
     }
     if(hp2 == 0){
         document.getElementById('enhit3').style.display = 'none';
-        alert('YOU WIN!');
+        document.getElementById('snake').style.display = 'none';
+        document.getElementById('shark').style.display = 'none';
     }
     if(hp1 == 2){
         document.getElementById('charhit1').style.display = 'none';
@@ -240,7 +252,7 @@ function proverit(){
         document.getElementById('charhit2').style.display = 'none';
     }
     if(hp1 == 0){
-        alert('Game Over!');
+        document.getElementById('plr').style.display = 'none';
         document.getElementById('charhit3').style.display = 'none';
     }
     vsego_zadach = 3;

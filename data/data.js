@@ -5,7 +5,7 @@ let mvop3 = "34*2 + 17 = ";
 let mpr_otv_zadachi_1 = "NTU="; 
 let mpr_otv_zadachi_2 = "LTk=";
 let mpr_otv_zadachi_3 = "ODU=";
-let btest = "Биология (ответы маленькими буквами)";
+let btest = "Биология";
 let bvop1 = "Наткет, наплетет, сядет и добычи ждет.";
 let bvop2 = "Под полом щевелит хвостиком.";
 let bvop3 = "Сколько у человека хромосом?";

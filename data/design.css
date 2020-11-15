@@ -31,12 +31,29 @@
     flex-direction: row-reverse;
 }
 .button{
-    background-color:  #fc6254;
+    background-color:  #674d6f;
     border-radius: 10px; 
-    border-color: white;
-    color: white;
+    border-color: #c592d5;
+    color: #c592d5;
+    font-family: 'Roboto', sans-serif;
 }
 .heart {
     flex: 1 1 auto;
     margin: 0 20px;
+}
+.train {
+    position: relative;
+    cursor: pointer;
+    width: 400px;
+    height: 400px;
+    left: 0;
+    transition: left 1s cubic-bezier(0, 0, 1, 1);
+  }
+.train1 {
+    position: relative;
+    cursor: pointer;
+    width: 400px;
+    height: 400px;
+    right: 0;
+    transition: right 1s cubic-bezier(0, 0, 1, 1);
 }
