@@ -98,8 +98,8 @@ button{
  </head>
 <br>
 <div class="anim" id='game3' style="display: none">
-    <div class="player" style="float: left;"> <img src="data/char.png"></div>
-    <div class='enemy' ><img src="data/enemy.png"></div>
+    <div class="player" style="float: left;"> <img src="data/char.png"> </div>
+    <div class='enemy' ><img src="data/1.png" id='shark'> <img src="data/3.png" id='snake'></div>
 </div>
 </body>
 </html>
@@ -119,6 +119,7 @@ function matem(){
     document.getElementById('game1').style.display = "block";
     document.getElementById('game2').style.display = "block";
     document.getElementById('game3').style.display = "block";
+    document.getElementById('shark').style.display = "none";
     document.getElementById('v_1').innerHTML = vopros_1;
     document.getElementById('v_2').innerHTML = vopros_2;
     document.getElementById('v_3').innerHTML = vopros_3;
@@ -138,6 +139,7 @@ function biol(){
     document.getElementById('game1').style.display = "block";
     document.getElementById('game2').style.display = "block";
     document.getElementById('game3').style.display = "block";
+    document.getElementById('snake').style.display = "none";
     document.getElementById('v_1').innerHTML = vopros_1;
     document.getElementById('v_2').innerHTML = vopros_2;
     document.getElementById('v_3').innerHTML = vopros_3;
