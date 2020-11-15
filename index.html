@@ -33,7 +33,7 @@ button{
 </style>
 </head>
 <body>
-<div class="healthbar" id='game' style="display: none">
+<div class="healthbar" id='game1' style="display: none">
     <div class="hp1">
         <div class="heart"><img src="data/heart.png"  id='charhit3'></div>
         <div class="heart"><img src="data/heart.png"  id='charhit2'></div>
@@ -47,12 +47,12 @@ button{
     </div>
 </div>
 
-<div style="margin-left: auto;margin-right: auto;width: 600px;text-align:center; background-color: #fe6f61; border-radius: 10px;">
+<div style="margin-left: auto;margin-right: auto;width: 600px; text-align:center; background-color: #fe6f61; border-radius: 10px;">
 
-<button onclick="matem()" id='vibor'>Математика: <br> Умножение</button>
-<button onclick="biol()" id='vibor'>Биология: <br> Насекомые</button>
+<button onclick="matem()" id='vibor1' class="button"> Математика: <br> Умножение</button>
+<button onclick="biol()" id='vibor2' class="button"> Биология: <br> Насекомые</button>
 
-<div id='game' style="display: none">
+<div id='game2' style="display: none">
 <p style="font-family: 'Roboto', sans-serif; color: white;">Тест по теме: <span id="tema"></span>.</p>
 
 <div id="vopros1" style="display:block; color: white; font-family: 'Roboto', sans-serif;">
@@ -97,17 +97,17 @@ button{
   </style>
  </head>
 <br>
-<div class="anim" id='game' style="display: none">
+<div class="anim" id='game3' style="display: none">
     <div class="player" style="float: left;"> <img src="data/char.png"></div>
     <div class='enemy' ><img src="data/enemy.png"></div>
 </div>
 </body>
 </html>
 <script>
+alert(kodirov('46'))
     let hp1 = 3
     let hp2 = 3
 function matem(){
-    alert('выбрана математика')
     test = mtest;
     vopros_1 = mvop1;
     vopros_2 = mvop2;
@@ -115,12 +115,18 @@ function matem(){
     pr_otv_zadachi_1 = mpr_otv_zadachi_1;
     pr_otv_zadachi_2 = mpr_otv_zadachi_2;
     pr_otv_zadachi_3 = mpr_otv_zadachi_3;
-    document.getElementById('vibor').style.display == "none";
-    document.getElementById('game').style.display == "block";
+    document.getElementById('vibor1').style.display = "none";
+    document.getElementById('vibor2').style.display = "none";
+    document.getElementById('game1').style.display = "block";
+    document.getElementById('game2').style.display = "block";
+    document.getElementById('game3').style.display = "block";
+    document.getElementById('v_1').innerHTML = vopros_1;
+    document.getElementById('v_2').innerHTML = vopros_2;
+    document.getElementById('v_3').innerHTML = vopros_3;
+    document.getElementById('tema').innerHTML = test;
 }
 
 function biol(){
-    alert('выбрана биология')
     test = btest;
     vopros_1 = bvop1;
     vopros_2 = bvop2;
@@ -128,17 +134,17 @@ function biol(){
     pr_otv_zadachi_1 = bpr_otv_zadachi_1;
     pr_otv_zadachi_2 = bpr_otv_zadachi_2;
     pr_otv_zadachi_3 = bpr_otv_zadachi_3;
-    document.getElementById('vibor').style.display == "none";
-    document.getElementById('game').style.display == "block";  
-}
-
-document.addEventListener('DOMContentLoaded', function(){
+    document.getElementById('vibor1').style.display = "none";
+    document.getElementById('vibor2').style.display = "none";
+    document.getElementById('game1').style.display = "block";
+    document.getElementById('game2').style.display = "block";
+    document.getElementById('game3').style.display = "block";
     document.getElementById('v_1').innerHTML = vopros_1;
     document.getElementById('v_2').innerHTML = vopros_2;
     document.getElementById('v_3').innerHTML = vopros_3;
     document.getElementById('tema').innerHTML = test;
-    });
-    
+}
+
 function sled_vopr(){
     if(document.getElementById('vopros2').style.display == "block"){
         document.getElementById('vopros2').style.display = "none";
@@ -181,6 +187,7 @@ function sled_vopr(){
         }
     }
 }
+
 function proverit(){
     otv_uch_1 = document.getElementById('z_1').value;
     otv_ucgenika_1 = otv_uch_1;
@@ -240,6 +247,7 @@ function proverit(){
     procent_vip = procent_vip.toFixed();
     document.getElementById('rezultat').innerHTML = "<span id='ot'>Задания выполнены верно на "+procent_vip+"%.</span><br><br>"+otveti;
 }
+
 function kodirov(stroka) { 
     var b64ch = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefg'+ 
                    'hijklmnopqrstuvwxyz0123456789+/='; 
@@ -259,6 +267,7 @@ function kodirov(stroka) {
     } 
     return b64enc; 
 } 
+
 </script>
 </body>
 </html>

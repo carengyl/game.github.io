@@ -34,6 +34,7 @@
     background-color:  #fc6254;
     border-radius: 10px; 
     border-color: white;
+    color: white;
 }
 .heart {
     flex: 1 1 auto;
